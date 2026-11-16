@@ -320,6 +320,17 @@ nav ul a.active{color:var(--accent);font-weight:600}
 @media (prefers-reduced-motion:reduce){.hook .tw{animation:none}}
 .hook-sub{font-size:17px;line-height:1.6;color:var(--muted);margin:0 0 18px;max-width:34em}
 .hook-sub b{color:var(--text);font-weight:600}
+.fm{max-width:760px;margin:36px auto 0;padding-left:30px;border-left:2px solid var(--line);position:relative}
+.fm-i{position:relative;padding:0 0 30px 6px;opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease}
+.fm-i.in{opacity:1;transform:none}
+.fm-i::before{content:"";position:absolute;left:-39px;top:6px;width:14px;height:14px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 5px var(--bg)}
+.fm-i:last-child{padding-bottom:0}
+.fm-date{font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--accent)}
+.fm-i h3{font-family:'Fraunces',Georgia,serif;font-size:21px;margin:4px 0 2px;line-height:1.25}
+.fm-i .fm-school{font-size:15px;font-weight:500;color:var(--muted);margin-bottom:8px}
+.fm-i p{font-size:15.5px;color:var(--muted);margin:0}
+.fm-now h3::after{content:"En cours";font-family:'Inter',sans-serif;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#fff;background:var(--accent);border-radius:99px;padding:3px 9px;margin-left:10px;vertical-align:middle}
+@media (prefers-reduced-motion:reduce){.fm-i{opacity:1;transform:none;transition:none}}
 </style>
 </head>
 <body>
@@ -454,6 +465,21 @@ nav ul a.active{color:var(--accent);font-weight:600}
     <h2>Le processus <em>ETL</em></h2>
     <div class="etl-flow"><div class="etl-step"><div class="etl-circle"><svg viewBox="0 0 120 120" fill="none" stroke="#b4492d" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><g><ellipse cx="34" cy="28" rx="13" ry="5"/><path d="M21 28v9c0 3 6 5 13 5s13-2 13-5v-9"/><ellipse cx="34" cy="56" rx="13" ry="5"/><path d="M21 56v9c0 3 6 5 13 5s13-2 13-5v-9"/><ellipse cx="34" cy="84" rx="13" ry="5"/><path d="M21 84v9c0 3 6 5 13 5s13-2 13-5v-9"/></g><path d="M62 60h30m-6-6l6 6-6 6"/></svg></div><div class="etl-en">Extract</div><b>Extraire</b><p>Récupère et vérifie les données depuis leurs différentes sources</p><span>Bases relationnelles · fichiers CSV / Excel · API</span></div><div class="etl-arrow" aria-hidden="true"><svg viewBox="0 0 60 24" fill="none" stroke="#b4492d" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h48m-8-8l8 8-8 8"/></svg></div><div class="etl-step"><div class="etl-circle"><svg viewBox="0 0 120 120" fill="none" stroke="#b4492d" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="60" cy="60" r="14"/><path d="M60 24v10M60 86v10M24 60h10M86 60h10M34 34l7 7M79 79l7 7M86 34l-7 7M41 79l-7 7"/><circle cx="60" cy="60" r="26"/><ellipse cx="60" cy="55" rx="7" ry="3"/><path d="M53 55v8c0 2 3 3 7 3s7-1 7-3v-8"/></svg></div><div class="etl-en">Transform</div><b>Transformer</b><p>Nettoie, convertit et organise les données pour les rendre exploitables</p><span>Talend · règles métier · contrôle qualité</span></div><div class="etl-arrow" aria-hidden="true"><svg viewBox="0 0 60 24" fill="none" stroke="#b4492d" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h48m-8-8l8 8-8 8"/></svg></div><div class="etl-step"><div class="etl-circle"><svg viewBox="0 0 120 120" fill="none" stroke="#b4492d" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M38 66a16 16 0 0 1 2-31 22 22 0 0 1 42 4 14 14 0 0 1-2 27"/><path d="M60 34v0"/><path d="M60 64V50m-6 6l6-6 6 6"/><ellipse cx="60" cy="74" rx="14" ry="5"/><path d="M46 74v14c0 3 6 5 14 5s14-2 14-5V74"/></svg></div><div class="etl-en">Load</div><b>Charger</b><p>Charge les données transformées dans la base ou l'entrepôt cible</p><span>PostgreSQL · entrepôt de données · référentiel EBX</span></div></div>
     <p class="etl-note">Chaque étape est contrôlée pour que la donnée reste fiable, traçable et exploitable, de la source jusqu'à l'analyse.</p>
+<section id="formation">
+  <div class="wrap">
+    <div class="eyebrow">Parcours académique</div>
+    <h2>Ma <em>formation</em></h2>
+    <div class="fm">
+      <div class="fm-i fm-now"><div class="fm-date">2026 – 2027</div><h3>5e année · Cycle ingénieur Data Science &amp; IA</h3><div class="fm-school">CESI École d'Ingénieurs, Paris Nanterre</div><p>Dernière année du cycle ingénieur, en recherche d'un stage de fin d'études de 6 mois à partir de février 2027.</p></div>
+      <div class="fm-i"><div class="fm-date">2025 – 2026</div><h3>4e année · Big Data et IA</h3><div class="fm-school">CESI École d'Ingénieurs, Paris Nanterre</div><p>Big data, apprentissage automatique et deep learning, avec des projets de groupe et un stage en entreprise.</p></div>
+      <div class="fm-i"><div class="fm-date">2024 – 2025</div><h3>3e année · Ingénieur informatique (Bac+3)</h3><div class="fm-school">CESI École d'Ingénieurs, Paris Nanterre</div><p>Développement logiciel, bases de données et gestion de projet, avec un stage en entreprise.</p></div>
+      <div class="fm-i"><div class="fm-date">2023 – 2024</div><h3>2e année · Prépa intégrée</h3><div class="fm-school">CESI École d'Ingénieurs, Paris Nanterre</div><p>Mathématiques, programmation et premiers projets : bases de données MySQL et sites web.</p></div>
+      <div class="fm-i"><div class="fm-date">2022 – 2023</div><h3>1re année · Prépa intégrée</h3><div class="fm-school">CESI École d'Ingénieurs, Paris Nanterre</div><p>Entrée en école d'ingénieurs : bases scientifiques et informatiques.</p></div>
+      <div class="fm-i"><div class="fm-date">2021</div><h3>BTS Mécatronique</h3><div class="fm-school">Douala, Cameroun</div><p>Une formation technique, à la croisée de la mécanique, de l'électronique et de l'informatique.</p></div>
+    </div>
+  </div>
+</section>
+
 <section id="experience">
   <div class="wrap reveal">
     <div class="eyebrow">expérience</div>
@@ -583,6 +609,10 @@ var i=0,n=0;function a(){if(n<P.length){p.textContent=P.slice(0,++n);setTimeout(
 function b(k){var w=L[i];if(k<=w.length){r.textContent=w.slice(0,k);setTimeout(function(){b(k+1)},70)}else setTimeout(function(){c(w.length)},1600)}
 function c(k){var w=L[i];if(k>=0){r.textContent=w.slice(0,k);setTimeout(function(){c(k-1)},35)}else{i=(i+1)%L.length;setTimeout(function(){b(0)},250)}}
 a()})();
+</script>
+<script>
+(function(){var els=document.querySelectorAll('.fm-i');if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});return}
+var o=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');o.unobserve(e.target)}})},{threshold:.2});els.forEach(function(e){o.observe(e)})})();
 </script>
 </body>
 </html>
