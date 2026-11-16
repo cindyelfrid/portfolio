@@ -314,6 +314,11 @@ footer{padding:28px 0;border-top:1px solid var(--line);text-align:center;font-si
 }
 nav ul a.active{color:var(--accent);font-weight:600}
 @media(max-width:900px){nav .wrap{height:auto;flex-wrap:wrap;padding-top:10px;padding-bottom:4px;row-gap:4px}nav ul{display:flex!important;order:3;width:100%;overflow-x:auto;gap:20px;padding:8px 0 10px;white-space:nowrap}.navcta{padding:7px 12px}}
+.hook{font-family:'Fraunces',Georgia,serif;font-size:clamp(20px,3.4vw,28px);font-weight:500;margin:0 0 14px;color:var(--text)}
+.hook .rot{display:inline-block;position:relative;height:1.25em;vertical-align:bottom;overflow:hidden;color:var(--accent);font-style:italic;font-weight:600}
+.hook .rot span{display:block;height:1.25em;line-height:1.25em;white-space:nowrap;transition:transform .28s cubic-bezier(.3,.9,.3,1),opacity .28s}
+.hook .rot span.out{transform:translateY(-100%);opacity:0}
+@media (prefers-reduced-motion:reduce){.hook .rot span{transition:none}}
 </style>
 </head>
 <body>
@@ -329,6 +334,7 @@ nav ul a.active{color:var(--accent);font-weight:600}
   <div class="wrap">
     <div class="hero-grid">
     <div class="hero-text">
+    <p class="hook" aria-label="Vous recherchez un Data Scientist, un Data Engineer, un Data Analyst ou un ingénieur IA ?">Vous recherchez un <span class="rot" aria-hidden="true"><span id="rotw">Data Scientist</span></span>&nbsp;?</p>
     <h1>Cindy Mawamba</h1>
     <p class="hero-role">Étudiante ingénieure · Data Science &amp; IA</p>
     <p class="lead">Je transforme la donnée en <strong>décisions fiables</strong>. Au CESI, je travaille de la donnée brute jusqu'au modèle : je conçois des pipelines de données robustes, je structure les référentiels, j'entraîne des modèles d'IA et je développe les applications qui les rendent utiles. Rigueur, autonomie et curiosité guident mon travail.</p>
@@ -566,6 +572,14 @@ if ('IntersectionObserver' in window) {
 function fit(){g.style.gridTemplateColumns='';if(window.innerWidth<=820)return;
 var gap=40,w=g.clientWidth,pw=540;for(var i=0;i<6;i++){g.style.gridTemplateColumns='1fr '+pw+'px';var h=tx.offsetHeight;var n=Math.round(h*1.5);n=Math.max(380,Math.min(n,w-gap-380));if(Math.abs(n-pw)<2)break;pw=n;}}
 window.addEventListener('load',fit);window.addEventListener('resize',fit);fit();})();
+</script>
+<script>
+(function(){var w=document.getElementById('rotw');if(!w)return;
+var L=['Data Scientist','Data Engineer','Data Analyst','ingénieur IA'],i=0;
+if(window.matchMedia&&matchMedia('(prefers-reduced-motion:reduce)').matches)return;
+var r=w.parentNode;function fit(){var m=0;w.style.display='inline-block';L.forEach(function(t){w.textContent=t;m=Math.max(m,w.getBoundingClientRect().width)});w.style.display='';w.textContent=L[i];r.style.width=Math.ceil(m)+2+'px'}
+(document.fonts&&document.fonts.ready?document.fonts.ready:Promise.resolve()).then(fit);
+setInterval(function(){w.classList.add('out');setTimeout(function(){i=(i+1)%L.length;w.textContent=L[i];w.style.transition='none';w.classList.remove('out');w.style.transform='translateY(100%)';w.style.opacity='0';void w.offsetWidth;w.style.transition='';w.style.transform='';w.style.opacity=''},280)},1500)})();
 </script>
 </body>
 </html>
