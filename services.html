@@ -308,23 +308,6 @@ footer{padding:28px 0;border-top:1px solid var(--line);text-align:center;font-si
 nav ul a.active{color:var(--accent);font-weight:600}
 @media(max-width:900px){nav .wrap{height:auto;flex-wrap:wrap;padding-top:10px;padding-bottom:4px;row-gap:4px}nav ul{display:flex!important;order:3;width:100%;overflow-x:auto;gap:20px;padding:8px 0 10px;white-space:nowrap}.navcta{padding:7px 12px}}
 
-/* domaines d'intervention */
-.dom-intro{max-width:640px;color:var(--muted);font-size:17px;margin:10px 0 34px}
-.dom-list{border-top:1px solid var(--text)}
-.dom{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:48px;padding:38px 0;border-bottom:1px solid var(--line)}
-.dom-n{display:block;font-family:'Fraunces',Georgia,serif;font-size:15px;font-weight:600;color:var(--accent);letter-spacing:.08em;margin-bottom:10px}
-.dom-head h3{font-family:'Fraunces',Georgia,serif;font-size:30px;line-height:1.15;font-weight:600;margin-bottom:12px}
-.dom-acc{font-family:'Fraunces',Georgia,serif;font-style:italic;font-size:18px;line-height:1.45;color:var(--muted)}
-.dom-body>p{font-size:16.5px;line-height:1.75;color:var(--text);margin-bottom:20px}
-.dom-body ul{list-style:none;display:grid;gap:12px;margin-bottom:20px}
-.dom-body li{font-size:15px;line-height:1.55;color:var(--muted);padding-left:20px;position:relative}
-.dom-body li:before{content:"";position:absolute;left:0;top:.7em;width:10px;height:1px;background:var(--accent)}
-.dom-body li b{color:var(--text);font-weight:600}
-.dom-chips{display:flex;flex-wrap:wrap;gap:8px 14px;margin-bottom:16px}
-.dom-chips span{font-size:13px;color:var(--text);border-bottom:1px solid var(--accent);padding-bottom:1px}
-.dom-link{font-size:14px;font-weight:600;color:var(--accent)}
-.dom-link:hover{text-decoration:underline}
-@media(max-width:800px){.dom{grid-template-columns:1fr;gap:18px;padding:30px 0}.dom-head h3{font-size:26px}}
 </style>
 </head>
 <body>
@@ -340,15 +323,14 @@ nav ul a.active{color:var(--accent);font-weight:600}
   <div class="wrap reveal">
     <div class="eyebrow">ce que je fais</div>
     <h2>Mes domaines d'intervention</h2>
-    <p class="dom-intro">Six domaines où j'interviens, chacun appuyé par un stage ou un projet que j'ai réellement mené.</p>
-      <div class="dom-list">
-      <article class="dom"><div class="dom-head"><span class="dom-n">01</span><h3>Pipelines de données</h3><p class="dom-acc">Faire arriver la bonne donnée, propre, au bon endroit.</p></div><div class="dom-body"><p>Expertise en intégration de données : conception de pipelines ETL qui extraient, nettoient et chargent les données vers PostgreSQL, avec un contrôle à chaque étape (formats, valeurs nulles, doublons, cohérence entre fichiers). J'ai construit un pipeline Talend paramétré par contexte chez GeoFirstBoost, un entrepôt de données pour le projet CHU et des flux automatisés avec Celery chez HJ Forwarding, soit 10 à 15 h de travail manuel économisées par semaine. Mon approche combine fiabilité, traçabilité et automatisation pour que la donnée arrive propre et au bon moment.</p><div class="dom-chips"><span>Talend</span><span>SQL</span><span>PostgreSQL</span><span>Celery</span><span>Redis</span><span>Power BI</span></div><a class="dom-link" href="experience.html">Voir mes stages →</a></div></article>
-      <article class="dom"><div class="dom-head"><span class="dom-n">02</span><h3>Données de référence</h3><p class="dom-acc">Une seule version fiable de la donnée, protégée par rôle.</p></div><div class="dom-body"><p>Expertise en gestion des données de référence : modélisation des référentiels dans EBX MDM, création des rôles utilisateurs, des droits d'accès et des politiques de sécurité. Chez GeoFirstBoost, j'ai structuré les données pour éviter les erreurs et les doublons dans les systèmes d'information. Mon approche combine cohérence, sécurité et gouvernance pour que chaque équipe travaille sur une version unique et fiable de la donnée.</p><div class="dom-chips"><span>EBX MDM</span><span>Gouvernance</span><span>Qualité des données</span><span>Sécurité</span></div><a class="dom-link" href="experience.html">Voir le stage →</a></div></article>
-      <article class="dom"><div class="dom-head"><span class="dom-n">03</span><h3>Machine learning &amp; deep learning</h3><p class="dom-acc">Entraîner, évaluer, et savoir dire ce que vaut un modèle.</p></div><div class="dom-body"><p>Expertise en machine learning et deep learning : préparation des données, entraînement et évaluation de modèles de classification et de débruitage, avec TensorFlow / Keras et Scikit-learn. J'ai mené la classification BRFSS 2015 en sprints Scrum / MLOps, dirigé une équipe de 4 sur le projet Leyenda (auto-encodeur à connexions résiduelles) et traité un jeu très déséquilibré pour la détection de fraude. Mon approche combine méthode, esprit critique et travail d'équipe pour savoir ce que vaut réellement un modèle.</p><div class="dom-chips"><span>TensorFlow / Keras</span><span>Scikit-learn</span><span>Auto-encodeur</span><span>Scrum</span><span>MLOps</span></div><a class="dom-link" href="projets.html">Voir les projets →</a></div></article>
-      <article class="dom"><div class="dom-head"><span class="dom-n">04</span><h3>IA équitable et explicable</h3><p class="dom-acc">Un modèle utile doit aussi être juste et compréhensible.</p></div><div class="dom-body"><p>Expertise en IA responsable : conception de systèmes dont on peut expliquer les décisions et mesurer l'équité, dans l'esprit de l'AI Act et du RGPD. Avec Nexura IA, j'ai associé CamemBERT à un scoring hybride pondéré pour trier des CV anonymisés dès l'entrée, puis audité les biais avec AIF360 : Disparate Impact ramené à 1,000 et F1-score de 0,718 contre 0,000 pour un ATS classique. Mon approche combine performance, transparence et limites assumées.</p><div class="dom-chips"><span>CamemBERT</span><span>AIF360</span><span>XAI</span><span>Flask</span><span>RGPD</span></div><a class="dom-link" href="projets.html">Voir Nexura IA →</a></div></article>
-      <article class="dom"><div class="dom-head"><span class="dom-n">05</span><h3>Applications full-stack</h3><p class="dom-acc">Du modèle de données à l'interface, jusqu'au déploiement.</p></div><div class="dom-body"><p>Expertise en développement full-stack : conception de bases de données, d'API et d'interfaces, jusqu'au déploiement. J'ai développé une plateforme Django de suivi d'expéditions avec notifications asynchrones, conçu l'architecture d'un ERP en microservices (React 18, NestJS, PostgreSQL, Docker) avec un agent IA, et réalisé un site d'agence marketing en PHP et MySQL avec espace d'administration. Mon approche combine ergonomie, robustesse et évolutivité.</p><div class="dom-chips"><span>Python · Django</span><span>React</span><span>NestJS</span><span>PHP</span><span>PostgreSQL</span><span>Docker</span></div><a class="dom-link" href="projets.html">Voir les projets →</a></div></article>
-      <article class="dom"><div class="dom-head"><span class="dom-n">06</span><h3>Supervision temps réel</h3><p class="dom-acc">Mesurer, transmettre et piloter, du capteur au tableau de bord.</p></div><div class="dom-body"><p>Expertise en supervision temps réel : conception de chaînes de mesure complètes, du capteur jusqu'au tableau de bord. Sur mon projet IoT Edge-to-Cloud, j'ai prototypé un système ESP32 (température, CO₂, lumière, présence), transmis les données en LoRaWAN et MQTT chiffré en TLS, piloté les actionneurs en local sans dépendre du cloud, puis visualisé les flux avec Node-RED et Grafana. Mon approche combine fiabilité de la mesure, sécurité et lisibilité.</p><div class="dom-chips"><span>ESP32</span><span>MQTT</span><span>Node-RED</span><span>Grafana</span><span>LoRaWAN</span></div><a class="dom-link" href="projets.html">Voir le projet →</a></div></article>
-      </div>
+    <div class="services">
+      <div class="service"><div class="ico">ETL</div><div class="svc-body"><h3>Pipelines de données</h3><ul><li>Extraction, transformation et chargement avec Talend</li><li>Des données propres et disponibles au bon moment</li></ul></div></div>
+      <div class="service"><div class="ico">MDM</div><div class="svc-body"><h3>Données de référence</h3><ul><li>Modèles de données avec EBX</li><li>Rôles, droits d'accès et traçabilité</li></ul></div></div>
+      <div class="service"><div class="ico">IA</div><div class="svc-body"><h3>Deep learning &amp; ML</h3><ul><li>Préparation des données, entraînement et évaluation de modèles</li><li>TensorFlow / Keras et Scikit-learn</li><li>Démarche Scrum et MLOps</li></ul></div></div>
+      <div class="service"><div class="ico">NLP</div><div class="svc-body"><h3>IA équitable et explicable</h3><ul><li>Scoring hybride avec embeddings sémantiques</li><li>Audit de biais et explicabilité</li><li>Dans l'esprit de l'AI Act</li></ul></div></div>
+      <div class="service"><div class="ico">Dev</div><div class="svc-body"><h3>Applications full-stack</h3><ul><li>Python / Django, Flask, React, NestJS, PHP</li><li>PostgreSQL</li><li>Du modèle de données à l'interface, jusqu'au déploiement</li></ul></div></div>
+      <div class="service"><div class="ico">IoT</div><div class="svc-body"><h3>Supervision temps réel</h3><ul><li>Collecte de capteurs avec ESP32 et MQTT</li><li>Traitement avec Node-RED</li><li>Visualisation en direct sur des tableaux de bord</li></ul></div></div>
+    </div>
   </div>
 </section>
 
