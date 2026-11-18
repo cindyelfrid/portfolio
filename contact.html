@@ -226,7 +226,7 @@ nav ul a.active{color:var(--accent);font-weight:600}
     <div class="contact-cards">
       <div class="cc"><small>Téléphone</small><b><a href="tel:+33752075528">07 52 07 55 28</a></b><span>Disponible pour un échange</span></div>
       <div class="cc"><small>Localisation</small><b>Conflans-Sainte-Honorine</b><span>Yvelines (78) · Île-de-France</span></div>
-      <div class="cc"><small>E-mail</small><b><a href="mailto:mawambacindy@gmail.com">mawambacindy@gmail.com</a></b><span>Je réponds rapidement</span></div>
+      <div class="cc"><small>E-mail</small><b><a href="mailto:cindyelfrid.mawambamadage@viacesi.fr">cindyelfrid.mawambamadage@viacesi.fr</a></b><span>Je réponds rapidement</span></div>
     </div>
     <form class="cform" id="cform">
       <h3>Entrer en contact</h3>
@@ -240,7 +240,7 @@ nav ul a.active{color:var(--accent);font-weight:600}
     <div style="display:flex;justify-content:center;margin:16px 0 0"><a class="btn ghost" href="https://www.google.com/maps/search/?api=1&query=Conflans-Sainte-Honorine" target="_blank" rel="noopener">Ouvrir dans Google Maps ↗</a></div>
     
     <div class="cta" style="margin-top:28px">
-      <a class="btn primary" href="mailto:mawambacindy@gmail.com">mawambacindy@gmail.com</a>
+      <a class="btn primary" href="mailto:cindyelfrid.mawambamadage@viacesi.fr">cindyelfrid.mawambamadage@viacesi.fr</a>
       <a class="btn ghost" href="https://www.linkedin.com/in/cindy-mawamba" target="_blank" rel="noopener">LinkedIn</a>
       <a class="btn ghost" href="https://github.com/cindyelfrid" target="_blank" rel="noopener">GitHub</a>
       <a class="btn ghost" href="index.html">Retour au portfolio</a>
@@ -261,10 +261,10 @@ if(FORM_ENDPOINT){
   st.style.color='var(--muted)';st.textContent='Envoi en cours…';
   fetch(FORM_ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify({name:nom,email:mail,message:msg})})
   .then(function(r){if(!r.ok)throw 0;f.reset();n.textContent='0';st.style.color='#2f7a3d';st.textContent='Merci ! Votre message a bien été envoyé.'})
-  .catch(function(){st.style.color='#b4492d';st.textContent="L'envoi a échoué. Écrivez-moi directement à mawambacindy@gmail.com."});
+  .catch(function(){st.style.color='#b4492d';st.textContent="L'envoi a échoué. Écrivez-moi directement à cindyelfrid.mawambamadage@viacesi.fr."});
 }else{
   var body='Bonjour Cindy,\n\n'+msg+'\n\n'+nom+'\n'+mail;
-  window.location.href='mailto:mawambacindy@gmail.com?subject='+encodeURIComponent('Contact depuis votre portfolio : '+nom)+'&body='+encodeURIComponent(body);
+  window.location.href='mailto:cindyelfrid.mawambamadage@viacesi.fr?subject='+encodeURIComponent('Contact depuis votre portfolio : '+nom)+'&body='+encodeURIComponent(body);
 }})})();
 </script>
 
