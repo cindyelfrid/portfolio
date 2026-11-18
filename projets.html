@@ -316,6 +316,7 @@ nav ul a.active{color:var(--accent);font-weight:600}
 .pf button{font:inherit;font-size:14px;font-weight:600;padding:8px 14px;border-radius:999px;border:1px solid var(--line);background:#fff;color:var(--text);cursor:pointer}
 .pf button.on{background:var(--accent);border-color:var(--accent);color:#fff}
 [hidden]{display:none!important}
+.proto{background:var(--accent-soft);border-radius:10px;padding:14px 18px;margin:0 0 18px}.proto h4{margin-bottom:6px}.proto p{margin:0;font-size:14.5px}
 </style>
 <link rel="stylesheet" href="responsive.css">
 <script src="i18n.js"></script>
@@ -346,6 +347,7 @@ nav ul a.active{color:var(--accent);font-weight:600}
           <div><b>55 CV</b><span>synthétiques testés face à 2 offres d'emploi réelles</span></div>
           <div><b>11,4 → 66,5</b><span>score sur 100 d'un profil Data Scientist face à une offre full stack : ATS classique contre Nexura IA</span></div>
         </div>
+        <div class="proto"><h4>Protocole d'évaluation</h4><p>Jeu de test : 55 CV synthétiques face à 2 offres d'emploi réelles. Référence de comparaison : un ATS classique fondé sur TF-IDF. Mesures : F1-score sur l'offre Data Scientist, avec une vérité terrain établie manuellement ; Disparate Impact et Statistical Parity Difference avant et après correction par Reweighing (AIF360). Lecture prudente : l'échantillon est restreint, et un indicateur de parité ne suffit pas, à lui seul, à démontrer l'absence de biais.</p></div>
         <h4>Ce que j'ai fait</h4>
         <ul>
           <li><strong>Pipeline en six étapes</strong> : extraction PDF, anonymisation (RGPD, privacy by design), CamemBERT, scoring hybride, audit AIF360, explicabilité XAI.</li>
