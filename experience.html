@@ -305,6 +305,17 @@ footer{padding:28px 0;border-top:1px solid var(--line);text-align:center;font-si
 }
 nav ul a.active{color:var(--accent);font-weight:600}
 @media(max-width:900px){nav .wrap{height:auto;flex-wrap:wrap;padding-top:10px;padding-bottom:4px;row-gap:4px}nav ul{display:flex!important;order:3;width:100%;overflow-x:auto;gap:20px;padding:8px 0 10px;white-space:nowrap}.navcta{padding:7px 12px}}
+
+.item .xbrief{background:var(--accent-soft);border-radius:10px;padding:14px 18px;margin-bottom:6px}
+.item .xbrief h4{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;margin-bottom:6px}
+.item .xbrief ul{margin:0}
+.item .more{margin-top:14px;border-top:1px solid var(--line);padding-top:12px}
+.item .more summary{cursor:pointer;font-weight:600;color:var(--accent);list-style:none}
+.item .more summary::-webkit-details-marker{display:none}
+.item .more summary:before{content:"+ ";font-weight:700}
+.item .more[open] summary:before{content:"– "}
+.item .more .mission-grid{margin-top:16px}
+.mission-grid h4.sub-h{margin-top:18px}
 </style>
 <link rel="stylesheet" href="responsive.css">
 <script src="i18n.js"></script>
@@ -326,14 +337,17 @@ nav ul a.active{color:var(--accent);font-weight:600}
     <div class="stats stats-exp">
       <div class="stat"><b>3</b><span>stages en entreprise</span></div>
       <div class="stat"><b>14</b><span>projets présentés</span></div>
-      <div class="stat"><b>55 CV</b><span>analysés par mon IA de recrutement équitable</span></div>
+      <div class="stat"><b>2</b><span>entreprises d'accueil</span></div>
     </div>
     <div class="timeline">
 
       <div class="item">
         <h3>Stagiaire Ingénieure Logiciel : Django / Python</h3>
-        <div class="meta">HjForwardingLogistics · Belgique · Oct. 2025 – Jan. 2026 · 4 mois</div>
+        <div class="meta">HjForwardingLogistics · Belgique · Oct. 2025 – Fév. 2026 · 5 mois</div>
         <p class="ctx">L'entreprise de transport maritime vers l'Afrique travaillait avec des outils bureautiques non intégrés, d'où une lourde charge administrative et une communication client peu réactive. J'ai conçu une plateforme de gestion et de suivi des expéditions internationales, avec un système de notifications asynchrones. Ce projet a fait l'objet d'un mémoire technique de 45 pages.</p>
+        <div class="xbrief"><h4>En bref</h4><ul><li>Plateforme web de suivi des expéditions en Python et Django, avec notifications asynchrones (Celery, Redis).</li><li>Détection automatique des retards par une tâche Celery Beat toutes les 6 heures, avec e-mails HTML d'alerte.</li><li>10 à 15 h de travail manuel économisées par semaine grâce à l'automatisation des flux.</li></ul></div>
+        <div class="chips"><span class="chip">Python</span><span class="chip">Django</span><span class="chip">Django REST framework</span><span class="chip">Celery</span><span class="chip">Redis</span><span class="chip">PostgreSQL</span></div>
+        <details class="more"><summary>Voir le détail des missions</summary>
         <div class="mission-grid">
           <div>
             <h4>Missions</h4>
@@ -367,13 +381,15 @@ nav ul a.active{color:var(--accent);font-weight:600}
           <button type="button" class="shot" aria-label="Agrandir : Formulaire de demande de devis"><img src="img/p-bef6676b6b.webp" alt="Formulaire de demande de devis" loading="lazy"><span>Formulaire de demande de devis</span></button>
           </div>
           <p class="note">Captures issues de mon mémoire technique (données de test).</p>
-        <div class="chips"><span class="chip">Python</span><span class="chip">Django</span><span class="chip">Django REST framework</span><span class="chip">Celery</span><span class="chip">Redis</span><span class="chip">PostgreSQL</span></div>
+        </details>
       </div>
-
       <div class="item">
         <h3>Stagiaire Data Engineer : MDM / EBX</h3>
-        <div class="meta">GeoFirstBoost · France · Jan. – Avr. 2025 · 4 mois</div>
+        <div class="meta">GeoFirstBoost · France · Jan. 2025 – Avr. 2025 · 4 mois</div>
         <p class="ctx">Centralisation et sécurisation des données de l'entreprise dans une solution de gestion des données de référence (Master Data Management).</p>
+        <div class="xbrief"><h4>En bref</h4><ul><li>Modèles de données et datasets dans EBX MDM.</li><li>Rôles utilisateurs, droits d'accès et politiques de sécurité.</li><li>Données structurées pour éviter les erreurs et les doublons.</li></ul></div>
+        <div class="chips"><span class="chip">EBX</span><span class="chip">MDM</span><span class="chip">Gouvernance des données</span></div>
+        <details class="more"><summary>Voir le détail des missions</summary>
         <div class="mission-grid">
           <div>
             <h4>Missions</h4>
@@ -391,21 +407,26 @@ nav ul a.active{color:var(--accent);font-weight:600}
             </ul>
           </div>
         </div>
-        <div class="chips"><span class="chip">EBX</span><span class="chip">MDM</span><span class="chip">Gouvernance des données</span></div>
+        </details>
       </div>
-
       <div class="item">
         <h3>Stagiaire Data Engineer : Talend / ETL et développement web</h3>
-        <div class="meta">GeoFirstBoost · France · Avr. – Juil. 2024 · 4 mois</div>
+        <div class="meta">GeoFirstBoost · France · Avr. 2024 – Juil. 2024 · 4 mois</div>
         <p class="ctx">Intégration de données avec Talend vers une base PostgreSQL, au sein de l'équipe de développeurs, puis participation à la création du site web interne de l'entreprise pour les commerciaux. Ce stage a fait l'objet d'un rapport de stage.</p>
+        <div class="xbrief"><h4>En bref</h4><ul><li>Pipeline ETL Talend : extraction quotidienne de fichiers CSV, transformation et chargement dans PostgreSQL 16.</li><li>Jobs paramétrés par groupes de contexte, réutilisables d'un environnement à l'autre.</li><li>Contribution distincte : site web interne des commerciaux avec WordPress.</li></ul></div>
+        <div class="chips"><span class="chip">Talend DI</span><span class="chip">ETL</span><span class="chip">PostgreSQL 16</span><span class="chip">pgAdmin 4</span><span class="chip">SQL</span><span class="chip">Fichiers CSV</span><span class="chip">WordPress</span><span class="chip">PHP</span></div>
+        <details class="more"><summary>Voir le détail des missions</summary>
         <div class="mission-grid">
           <div>
-            <h4>Missions</h4>
+            <h4>Missions Data Engineering</h4>
             <ul>
               <li><strong>Création de la base de données</strong> avec pgAdmin 4 (PostgreSQL 16) : base, schémas et tables à partir de scripts SQL, et table de contexte pour stocker les variables de configuration.</li>
               <li><strong>Projet Talend ICOMMERCE</strong> : groupes de contexte (VENTE_ODS), variables, chargement implicite et <strong>connexion à PostgreSQL</strong> via les métadonnées.</li>
               <li><strong>Processus ETL de migration</strong> : extraction quotidienne de fichiers plats CSV, transformation (formats, valeurs nulles, doublons, cohérence entre fichiers et avec les données existantes), puis chargement.</li>
               <li>Définition des <strong>clés primaires</strong> et des règles de gestion dans les jobs Talend.</li>
+            </ul>
+            <h4 class="sub-h">Site web interne (WordPress)</h4>
+            <ul>
               <li><strong>Site web interne pour les commerciaux</strong> avec WordPress (PHP / MySQL) : pages, mise en page en grilles, personnalisation de l'apparence.</li>
             </ul>
           </div>
@@ -425,9 +446,8 @@ nav ul a.active{color:var(--accent);font-weight:600}
           <button type="button" class="shot contain" aria-label="Agrandir : pgAdmin 4 : schémas et tables dans PostgreSQL 16"><img src="img/p-8788cb394c.webp" alt="Création des tables dans pgAdmin" loading="lazy"><span>pgAdmin 4 : schémas et tables dans PostgreSQL 16</span></button>
           </div>
           <p class="note">Captures issues de mon rapport de stage.</p>
-        <div class="chips"><span class="chip">Talend DI</span><span class="chip">ETL</span><span class="chip">PostgreSQL 16</span><span class="chip">pgAdmin 4</span><span class="chip">SQL</span><span class="chip">Fichiers CSV</span><span class="chip">WordPress</span><span class="chip">PHP</span></div>
+        </details>
       </div>
-
       <div class="item">
         <h3>Cycle ingénieur : Data Science &amp; IA</h3>
         <div class="meta">CESI École d'Ingénieurs · Paris Nanterre · 2022 – 2027</div>

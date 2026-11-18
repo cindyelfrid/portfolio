@@ -311,6 +311,11 @@ footer{padding:28px 0;border-top:1px solid var(--line);text-align:center;font-si
 }
 nav ul a.active{color:var(--accent);font-weight:600}
 @media(max-width:900px){nav .wrap{height:auto;flex-wrap:wrap;padding-top:10px;padding-bottom:4px;row-gap:4px}nav ul{display:flex!important;order:3;width:100%;overflow-x:auto;gap:20px;padding:8px 0 10px;white-space:nowrap}.navcta{padding:7px 12px}}
+
+.pf{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 6px}
+.pf button{font:inherit;font-size:14px;font-weight:600;padding:8px 14px;border-radius:999px;border:1px solid var(--line);background:#fff;color:var(--text);cursor:pointer}
+.pf button.on{background:var(--accent);border-color:var(--accent);color:#fff}
+[hidden]{display:none!important}
 </style>
 <link rel="stylesheet" href="responsive.css">
 <script src="i18n.js"></script>
@@ -328,9 +333,10 @@ nav ul a.active{color:var(--accent);font-weight:600}
   <div class="wrap reveal">
     <div class="eyebrow">projets</div>
     <h2>Ce que j'ai construit</h2>
+    <div class="pf" role="group" aria-label="Filtrer les projets par catégorie"><button type="button" class="on" data-f="all">Tous</button><button type="button" data-f="de">Data Engineering</button><button type="button" data-f="ds">Data Science &amp; IA</button><button type="button" data-f="dev">Développement logiciel</button><button type="button" data-f="bd">Big Data &amp; IoT</button></div>
     <h3 class="sub-title">Projets académiques <span>CESI</span></h3>
     <div class="projects">
-      <article class="proj featured">
+      <article data-cat="ds" class="proj featured">
         <span class="kind">NLP · IA responsable · Projet ADS</span>
         <h3>Nexura IA : un système ATS équitable et explicable</h3>
         <p>Les systèmes de tri de CV classiques cherchent des mots-clés : ils ratent des candidats qualifiés et peuvent reproduire des biais discriminatoires sans que personne ne le voie. Nexura IA est un prototype qui comprend le sens des CV grâce à CamemBERT, note chaque candidat selon quatre critères pondérés et audite l'équité de ses décisions.</p>
@@ -362,7 +368,7 @@ nav ul a.active{color:var(--accent);font-weight:600}
         <div class="chips"><span class="chip">Python</span><span class="chip">CamemBERT</span><span class="chip">TF-IDF</span><span class="chip">AIF360</span><span class="chip">XAI</span><span class="chip">Flask</span><span class="chip">Jinja2</span></div>
       </article>
 
-      <article class="proj">
+      <article data-cat="dev" class="proj">
         <span class="kind">Full-stack · Agent IA · Mai – Juin 2026</span>
         <h3>Transvirex Logistics : conception d'un ERP logistique intelligent</h3>
         <p>ERP logistique pour accompagner la transformation digitale d'une entreprise de transport en forte croissance (<strong>15 000 livraisons par mois</strong>, plus de 160 collaborateurs).</p>
@@ -388,7 +394,7 @@ nav ul a.active{color:var(--accent);font-weight:600}
         <div class="chips"><span class="chip">React 18</span><span class="chip">NestJS</span><span class="chip">PostgreSQL</span><span class="chip">NoSQL</span><span class="chip">Microservices</span><span class="chip">Event-driven</span><span class="chip">API Gateway</span><span class="chip">Docker</span><span class="chip">Agent IA</span></div>
       </article>
 
-      <article class="proj">
+      <article data-cat="de bd" class="proj">
         <span class="kind">Big Data · Mai – Juin 2025</span>
         <h3>Projet CHU : entrepôt de données pour le secteur hospitalier</h3>
         <p>Entrepôt de données et tableaux de bord décisionnels pour un groupe hospitalier (CHU), réalisés en équipe.</p>
@@ -407,7 +413,7 @@ nav ul a.active{color:var(--accent);font-weight:600}
         <div class="chips"><span class="chip">Talend Open Studio</span><span class="chip">PostgreSQL</span><span class="chip">Entrepôt de données</span><span class="chip">Power BI</span><span class="chip">KPI</span><span class="chip">ETL</span></div>
       </article>
 
-      <article class="proj">
+      <article data-cat="bd" class="proj">
         <span class="kind">IoT · Février – Mars 2026</span>
         <h3>Système IoT Edge-to-Cloud de monitoring et de régulation environnementale</h3>
         <p>Conception et prototypage complet d'un système intelligent de monitoring et de régulation automatique pour des espaces collectifs : régulation thermique, qualité de l'air (CO₂), optimisation de l'éclairage et suivi d'occupation.</p>
@@ -423,7 +429,7 @@ nav ul a.active{color:var(--accent);font-weight:600}
         <div class="chips"><span class="chip">ESP32</span><span class="chip">LoRaWAN</span><span class="chip">MQTT / Mosquitto</span><span class="chip">TLS</span><span class="chip">Edge computing</span><span class="chip">Node-RED</span><span class="chip">Grafana</span><span class="chip">PERT</span></div>
       </article>
 
-      <article class="proj">
+      <article data-cat="dev" class="proj">
         <span class="kind">Application · Avril – Mai 2025</span>
         <h3>EasySave 3.0 : application de sauvegarde intelligente et interactive</h3>
         <p>Nouvelle version d'EasySave : application graphique de sauvegarde automatisée, sécurisée et optimisée pour les environnements professionnels.</p>
@@ -445,7 +451,7 @@ nav ul a.active{color:var(--accent);font-weight:600}
         <p style="margin-top:14px"><a href="https://github.com/cindyelfrid/EasySaveV2" target="_blank" rel="noopener" style="color:var(--accent);font-weight:600">Voir le code sur GitHub →</a></p>
       </article>
 
-      <article class="proj">
+      <article data-cat="ds" class="proj">
         <span class="kind">Deep learning · 2026 · Projet de groupe CESI</span>
         <h3>Projet Leyenda : client fictif TouNum</h3>
         <p>Projet de deep learning réalisé pour un client fictif, TouNum, en équipe de 4 personnes, avec deux livrables : une classification binaire, puis le débruitage de données.</p>
@@ -458,7 +464,7 @@ nav ul a.active{color:var(--accent);font-weight:600}
         <div class="chips"><span class="chip">Deep learning</span><span class="chip">Auto-encodeur</span><span class="chip">Classification binaire</span><span class="chip">Gestion de projet</span></div>
       </article>
 
-      <article class="proj">
+      <article data-cat="ds" class="proj">
         <span class="kind">Data science · Décembre 2024</span>
         <h3>Analyse des transactions bancaires pour la détection de fraudes</h3>
         <p>Comment analyser efficacement un jeu de données très déséquilibré pour identifier les transactions frauduleuses et construire un modèle fiable de prédiction des fraudes bancaires.</p>
@@ -472,7 +478,7 @@ nav ul a.active{color:var(--accent);font-weight:600}
         <div class="chips"><span class="chip">Analyse exploratoire</span><span class="chip">Données déséquilibrées</span><span class="chip">Détection de fraude</span><span class="chip">Sélection de variables</span></div>
       </article>
 
-      <article class="proj">
+      <article data-cat="ds" class="proj">
         <span class="kind">Deep learning · Mars 2026</span>
         <h3>Prédiction du diabète : BRFSS 2015</h3>
         <p>Projet de groupe de classification binaire sur le jeu de données de santé BRFSS 2015, mené en deux sprints Scrum / MLOps.</p>
@@ -486,7 +492,7 @@ nav ul a.active{color:var(--accent);font-weight:600}
         <div class="chips"><span class="chip">TensorFlow</span><span class="chip">Keras</span><span class="chip">Scrum</span><span class="chip">MLOps</span></div>
       </article>
 
-      <article class="proj">
+      <article data-cat="dev" class="proj">
         <span class="kind">Application · POO · 2023</span>
         <h3>Application de gestion de données avec interface graphique</h3>
         <p>Projet de programmation orientée objet : une application qui gère des données via une interface graphique, reliée à une base SQL Server.</p>
@@ -499,7 +505,7 @@ nav ul a.active{color:var(--accent);font-weight:600}
         <div class="chips"><span class="chip">POO</span><span class="chip">SQL Server</span><span class="chip">UML / SysML</span><span class="chip">MCD / MLD</span></div>
       </article>
 
-      <article class="proj">
+      <article data-cat="ds" class="proj">
         <span class="kind">Machine learning · 2024</span>
         <h3>Prédiction de l'attrition des employés</h3>
         <p>Modèle prédictif des départs d'employés à partir de données RH, conçu dans le respect de l'éthique et de l'équité.</p>
@@ -512,7 +518,7 @@ nav ul a.active{color:var(--accent);font-weight:600}
         <div class="chips"><span class="chip">Python</span><span class="chip">Scikit-learn</span><span class="chip">Analyse exploratoire</span></div>
       </article>
 
-      <article class="proj">
+      <article data-cat="de" class="proj">
         <span class="kind">Base de données · 2023</span>
         <h3>Conception d'une base de données relationnelle</h3>
         <p>Projet mené en tant que chef de projet : concevoir une base de données à partir d'une analyse des besoins du client.</p>
@@ -530,7 +536,7 @@ nav ul a.active{color:var(--accent);font-weight:600}
 
       
 
-      <article class="proj featured">
+      <article data-cat="dev" class="proj featured">
         <span class="kind">Web · PHP / MySQL · Full-stack</span>
         <h3>GEOMBMAP : site d'agence marketing</h3>
         <p>Site vitrine et commercial d'une agence de marketing digital, accompagné d'un <strong>espace d'administration</strong> pour suivre les ventes, les travaux et la facturation. Développé en full-stack en PHP et MySQL.</p>
@@ -580,7 +586,7 @@ nav ul a.active{color:var(--accent);font-weight:600}
         </div>
       </article>
 
-      <article class="proj">
+      <article data-cat="dev" class="proj">
         <span class="kind">Web app · JavaScript</span>
         <h3>Verve : apprentissage de l'anglais</h3>
         <p>Application web autonome en un seul fichier HTML, sans dépendance externe, que j'ai créée pour progresser en anglais.</p>
@@ -592,7 +598,7 @@ nav ul a.active{color:var(--accent);font-weight:600}
         <div class="chips"><span class="chip">JavaScript</span><span class="chip">Web Speech API</span><span class="chip">Web Audio</span></div>
       </article>
 
-      <article class="proj">
+      <article data-cat="dev" class="proj">
         <span class="kind">Web · Sept. 2023 · Projet personnel</span>
         <h3>Site e-commerce</h3>
         <p>Conception et développement d'un site marchand, de la modélisation jusqu'à la recette.</p>
@@ -649,6 +655,13 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape')lb.classList
 if(window.innerWidth<=800)return;var rows={};hs.forEach(function(h){var k=h.closest('.proj').offsetTop+'_'+h.closest('.projects').offsetTop;(rows[k]=rows[k]||[]).push(h);});
 Object.keys(rows).forEach(function(k){var m=0;rows[k].forEach(function(h){m=Math.max(m,h.offsetHeight);});rows[k].forEach(function(h){h.style.minHeight=m+'px';});});}
 window.addEventListener('load',eq);window.addEventListener('resize',eq);})();
+</script>
+<script>
+(function(){var bar=document.querySelector('.pf');if(!bar)return;var arts=[].slice.call(document.querySelectorAll('[data-cat]'));
+bar.addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;var f=b.getAttribute('data-f');
+[].forEach.call(bar.children,function(x){x.className=x===b?'on':''});
+arts.forEach(function(a){a.hidden=!(f==='all'||a.getAttribute('data-cat').split(' ').indexOf(f)>-1)});
+[].forEach.call(document.querySelectorAll('.sub-title'),function(h){var c=h.nextElementSibling,vis=c&&c.querySelectorAll('[data-cat]:not([hidden])').length;h.hidden=!vis;if(c)c.hidden=!vis})})})();
 </script>
 </body>
 </html>
