@@ -8,7 +8,7 @@
 <style>
 :root{
   --bg:#faf7f2; --bg2:#f1ebe0; --card:#ffffff; --line:#e6dfd2;
-  --text:#201c17; --muted:#6a6358; --accent:#b4492d; --accent-soft:#f6e6df;
+  --text:#201c17; --muted:#6a6358; --accent:#b4492d; --accent-soft:#f6e6df; --accent-dark:#98391f; --accent-deep:#7d2f19;
   --radius:12px;
 }
 *{box-sizing:border-box;margin:0;padding:0}
@@ -32,7 +32,7 @@ h1 em{font-style:italic;color:var(--accent)}
 .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:36px}
 .btn{display:inline-flex;align-items:center;gap:8px;padding:13px 22px;border-radius:8px;font-weight:600;font-size:15px;transition:.2s}
 .btn.primary{background:var(--accent);color:#fff}
-.btn.primary:hover{background:#98391f}
+.btn.primary:hover{background:var(--accent-dark)}
 .btn.ghost{border:1px solid var(--text);color:var(--text)}
 .btn.ghost:hover{background:var(--text);color:#fff}
 .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:64px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
@@ -90,7 +90,7 @@ section.alt .item::before{box-shadow:0 0 0 5px var(--bg2)}
 .proj ul{padding-left:18px;color:var(--muted);font-size:14.5px;margin-bottom:16px;flex:1}
 .proj li{margin-bottom:6px}
 .proj li strong{color:var(--text);font-weight:600}
-.proj .result{font-size:14px;font-weight:500;margin-bottom:16px;padding:10px 12px;background:var(--accent-soft);border-radius:8px;color:#7d2f19}
+.proj .result{font-size:14px;font-weight:500;margin-bottom:16px;padding:10px 12px;background:var(--accent-soft);border-radius:8px;color:var(--accent-deep)}
 .proj.featured{grid-column:1/-1;padding:32px}
 .projects{display:block;column-width:310px;column-gap:20px}
 .projects .proj{break-inside:avoid;-webkit-column-break-inside:avoid;margin-bottom:20px;display:flex}
@@ -209,6 +209,7 @@ footer{padding:28px 0;border-top:1px solid var(--line);text-align:center;font-si
 nav ul a.active{color:var(--accent);font-weight:600}
 @media(max-width:900px){nav .wrap{height:auto;flex-wrap:wrap;padding-top:10px;padding-bottom:4px;row-gap:4px}nav ul{display:flex!important;order:3;width:100%;overflow-x:auto;gap:20px;padding:8px 0 10px;white-space:nowrap}.navcta{padding:7px 12px}}
 </style>
+<script src="i18n.js"></script>
 </head>
 <body>
 <nav>
@@ -258,13 +259,13 @@ m.addEventListener('input',function(){n.textContent=m.value.length});
 f.addEventListener('submit',function(e){e.preventDefault();
 var nom=document.getElementById('cf-nom').value,mail=document.getElementById('cf-mail').value,msg=m.value;
 if(FORM_ENDPOINT){
-  st.style.color='var(--muted)';st.textContent='Envoi en cours…';
+  st.style.color='var(--muted)';st.textContent=i18n.t('Envoi en cours…');
   fetch(FORM_ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify({name:nom,email:mail,message:msg})})
-  .then(function(r){if(!r.ok)throw 0;f.reset();n.textContent='0';st.style.color='#2f7a3d';st.textContent='Merci ! Votre message a bien été envoyé.'})
-  .catch(function(){st.style.color='#b4492d';st.textContent="L'envoi a échoué. Écrivez-moi directement à cindyelfrid.mawambamadage@viacesi.fr."});
+  .then(function(r){if(!r.ok)throw 0;f.reset();n.textContent='0';st.style.color='#2f7a3d';st.textContent=i18n.t('Merci ! Votre message a bien été envoyé.')})
+  .catch(function(){st.style.color='var(--accent)';st.textContent=i18n.t("L'envoi a échoué. Écrivez-moi directement à")+' cindyelfrid.mawambamadage@viacesi.fr.'});
 }else{
-  var body='Bonjour Cindy,\n\n'+msg+'\n\n'+nom+'\n'+mail;
-  window.location.href='mailto:cindyelfrid.mawambamadage@viacesi.fr?subject='+encodeURIComponent('Contact depuis votre portfolio : '+nom)+'&body='+encodeURIComponent(body);
+  var body=i18n.t('Bonjour Cindy,')+'\n\n'+msg+'\n\n'+nom+'\n'+mail;
+  window.location.href='mailto:cindyelfrid.mawambamadage@viacesi.fr?subject='+encodeURIComponent(i18n.t('Contact depuis votre portfolio :')+' '+nom)+'&body='+encodeURIComponent(body);
 }})})();
 </script>
 
