@@ -355,6 +355,10 @@ h1.hook{margin:0 0 14px!important;padding:0}
 .hook .caret{display:inline-block;width:2px;height:1em;background:var(--text);margin-left:2px;vertical-align:-.12em;animation:blink 1s steps(1) infinite}
 @media (prefers-reduced-motion:reduce){.hook .caret{animation:none}}
 .hook b{font-weight:700}
+.hook{min-height:2.5em}
+.hook .rot{font-weight:700;color:var(--accent)}
+.hook .caret{background:var(--accent)}
+h1.hook{min-height:1.25em}@media(max-width:600px){h1.hook{min-height:2.45em}}
 </style>
 <link rel="stylesheet" href="responsive.css">
 <script src="i18n.js"></script>
@@ -372,7 +376,7 @@ h1.hook{margin:0 0 14px!important;padding:0}
   <div class="wrap">
     <div class="hero-grid">
     <div class="hero-text">
-    <h1 class="hook" aria-label="Vous recherchez un Data Analyst, un Data Engineer ou un DevOps ?"><span aria-hidden="true" id="twh"></span></h1>
+    <h1 class="hook" aria-label="Vous recherchez un Data Analyst, un Data Engineer ou un DevOps ?"><span aria-hidden="true"><span id="twp"></span><span class="rot" id="twr"></span><span class="caret"></span><span id="tws"></span></span></h1>
     <p class="hook-sub"><b>Cindy Mawamba</b>, ingénieure en devenir, passionnée par la Data et l'Intelligence Artificielle.</p>
     <p class="lead">J'explore les différentes facettes de l'informatique, de l'ingénierie des données au développement logiciel, en passant par l'intelligence artificielle. À travers ce portfolio, je partage mon parcours, mes expériences et les projets qui façonnent mon évolution.</p>
     <div class="cta">
@@ -589,16 +593,15 @@ var gap=40,w=g.clientWidth,pw=540;for(var i=0;i<6;i++){g.style.gridTemplateColum
 window.addEventListener('load',fit);window.addEventListener('resize',fit);fit();})();
 </script>
 <script>
-(function(){var h=document.getElementById('twh');if(!h)return;
+(function(){var p=document.getElementById('twp'),r=document.getElementById('twr'),s=document.getElementById('tws');if(!p||!r||!s)return;
 var en=window.i18n&&i18n.lang==='en';
-var S=en?[['Are you looking for a ',0],['Data Analyst',1],[', a ',0],['Data Engineer',1],[' or a ',0],['DevOps engineer',1],['?',0]]
-        :[['Vous recherchez un ',0],['Data Analyst',1],[', un ',0],['Data Engineer',1],[' ou un ',0],['DevOps',1],['\u00a0?',0]];
-var caret=document.createElement('span');caret.className='caret';
-if(window.matchMedia&&matchMedia('(prefers-reduced-motion:reduce)').matches){S.forEach(function(s){var e=document.createElement(s[1]?'b':'span');e.textContent=s[0];h.appendChild(e)});return}
-h.appendChild(caret);var i=0,k=0,cur=null;
-function step(){if(i>=S.length)return;var s=S[i];if(!cur){cur=document.createElement(s[1]?'b':'span');h.insertBefore(cur,caret)}
- if(k<s[0].length){cur.textContent=s[0].slice(0,++k);setTimeout(step,s[1]?70:50)}else{i++;k=0;cur=null;step()}}
-step()})();
+var P=en?'Are you looking for a ':'Vous recherchez un ',L=en?['Data Analyst','Data Scientist','Data Engineer','DevOps engineer']:['Data Analyst','Data Scientist','Data Engineer','DevOps'],E=en?'?':'\u00a0?';
+if(window.matchMedia&&matchMedia('(prefers-reduced-motion:reduce)').matches){p.textContent=P;r.textContent=L[0];s.textContent=E;var c0=document.querySelector('.hook .caret');if(c0)c0.style.display='none';return}
+var i=0,n=0;
+function a(){if(n<P.length){p.textContent=P.slice(0,++n);setTimeout(a,45)}else{s.textContent=E;b(0)}}
+function b(k){var w=L[i];if(k<=w.length){r.textContent=w.slice(0,k);setTimeout(function(){b(k+1)},75)}else{setTimeout(function(){c(w.length)},1500)}}
+function c(k){var w=L[i];if(k>=0){r.textContent=w.slice(0,k);setTimeout(function(){c(k-1)},35)}else{i=(i+1)%L.length;setTimeout(function(){b(0)},250)}}
+a()})();
 </script>
 <script>
 (function(){var els=document.querySelectorAll('.fm-i');if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});return}
