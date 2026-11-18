@@ -352,6 +352,9 @@ h1.hook{margin:0 0 14px!important;padding:0}
 .hero .hero-text h1.hook{font-size:clamp(26px,3vw,34px);white-space:normal;line-height:1.2;margin:0 0 16px}
 
 .svc-body p{color:var(--muted);font-size:14.5px;line-height:1.65}
+.hook .caret{display:inline-block;width:2px;height:1em;background:var(--text);margin-left:2px;vertical-align:-.12em;animation:blink 1s steps(1) infinite}
+@media (prefers-reduced-motion:reduce){.hook .caret{animation:none}}
+.hook b{font-weight:700}
 </style>
 <link rel="stylesheet" href="responsive.css">
 <script src="i18n.js"></script>
@@ -369,10 +372,9 @@ h1.hook{margin:0 0 14px!important;padding:0}
   <div class="wrap">
     <div class="hero-grid">
     <div class="hero-text">
-    <h1 class="hook" aria-label="Vous recherchez un Data Analyst ?"><span aria-hidden="true"><span id="twp"></span><span class="tw" id="twr"></span> ?</span></h1>
-    <p class="hook-sub">Je suis <b>Cindy Mawamba</b>, étudiante ingénieure en Data Science &amp; IA au CESI École d'Ingénieurs, Paris Nanterre.</p>
-    <p class="lead">Je transforme la donnée en <strong>décisions fiables</strong>. À partir de données brutes, je réalise le nettoyage, l'exploration et l'analyse nécessaires pour identifier des tendances, répondre à une question métier et communiquer des résultats clairs à travers des visualisations et des tableaux de bord.</p>
-    <p class="lead">Ce portfolio réunit mes projets académiques et personnels, à la croisée de l'analyse de données, de l'intelligence artificielle et du développement.</p>
+    <h1 class="hook" aria-label="Vous recherchez un Data Analyst, un Data Engineer ou un DevOps ?"><span aria-hidden="true" id="twh"></span></h1>
+    <p class="hook-sub"><b>Cindy Mawamba</b>, ingénieure en devenir, passionnée par la Data et l'Intelligence Artificielle.</p>
+    <p class="lead">J'explore les différentes facettes de l'informatique, de l'ingénierie des données au développement logiciel, en passant par l'intelligence artificielle. À travers ce portfolio, je partage mon parcours, mes expériences et les projets qui façonnent mon évolution.</p>
     <div class="cta">
       <a class="btn primary" href="contact.html">Me contacter</a>
       <a class="btn ghost" href="CV_Cindy_Mawamba.pdf">Télécharger mon CV</a>
@@ -587,13 +589,16 @@ var gap=40,w=g.clientWidth,pw=540;for(var i=0;i<6;i++){g.style.gridTemplateColum
 window.addEventListener('load',fit);window.addEventListener('resize',fit);fit();})();
 </script>
 <script>
-(function(){var p=document.getElementById('twp'),r=document.getElementById('twr');if(!p||!r)return;
-var P=i18n.t('Vous recherchez un '),L=['Data Analyst'];
-if(window.matchMedia&&matchMedia('(prefers-reduced-motion:reduce)').matches){p.textContent=P;r.textContent=L[0];return}
-var i=0,n=0;function a(){if(n<P.length){p.textContent=P.slice(0,++n);setTimeout(a,55)}else b(0)}
-function b(k){var w=L[i];if(k<=w.length){r.textContent=w.slice(0,k);setTimeout(function(){b(k+1)},70)}else{}}
-function c(k){var w=L[i];if(k>=0){r.textContent=w.slice(0,k);setTimeout(function(){c(k-1)},35)}else{i=(i+1)%L.length;setTimeout(function(){b(0)},250)}}
-a()})();
+(function(){var h=document.getElementById('twh');if(!h)return;
+var en=window.i18n&&i18n.lang==='en';
+var S=en?[['Are you looking for a ',0],['Data Analyst',1],[', a ',0],['Data Engineer',1],[' or a ',0],['DevOps engineer',1],['?',0]]
+        :[['Vous recherchez un ',0],['Data Analyst',1],[', un ',0],['Data Engineer',1],[' ou un ',0],['DevOps',1],['\u00a0?',0]];
+var caret=document.createElement('span');caret.className='caret';
+if(window.matchMedia&&matchMedia('(prefers-reduced-motion:reduce)').matches){S.forEach(function(s){var e=document.createElement(s[1]?'b':'span');e.textContent=s[0];h.appendChild(e)});return}
+h.appendChild(caret);var i=0,k=0,cur=null;
+function step(){if(i>=S.length)return;var s=S[i];if(!cur){cur=document.createElement(s[1]?'b':'span');h.insertBefore(cur,caret)}
+ if(k<s[0].length){cur.textContent=s[0].slice(0,++k);setTimeout(step,s[1]?70:50)}else{i++;k=0;cur=null;step()}}
+step()})();
 </script>
 <script>
 (function(){var els=document.querySelectorAll('.fm-i');if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});return}
