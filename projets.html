@@ -317,6 +317,7 @@ nav ul a.active{color:var(--accent);font-weight:600}
 .pf button.on{background:var(--accent);border-color:var(--accent);color:#fff}
 [hidden]{display:none!important}
 .proto{background:var(--accent-soft);border-radius:10px;padding:14px 18px;margin:0 0 18px}.proto h4{margin-bottom:6px}.proto p{margin:0;font-size:14.5px}
+.mgrp{font-size:13px;letter-spacing:.06em;text-transform:uppercase;margin:14px 0 6px}
 </style>
 <link rel="stylesheet" href="responsive.css">
 <script src="i18n.js"></script>
@@ -341,10 +342,14 @@ nav ul a.active{color:var(--accent);font-weight:600}
         <span class="kind">NLP · IA responsable · Projet ADS</span>
         <h3>Nexura IA : un système ATS équitable et explicable</h3>
         <p>Les systèmes de tri de CV classiques cherchent des mots-clés : ils ratent des candidats qualifiés et peuvent reproduire des biais discriminatoires sans que personne ne le voie. Nexura IA est un prototype qui comprend le sens des CV grâce à CamemBERT, note chaque candidat selon quatre critères pondérés et audite l'équité de ses décisions.</p>
+        <h4 class="mgrp">Performance de classification</h4>
         <div class="metrics">
           <div><b>0,718</b><span>F1-score sur l'offre Data Scientist, contre 0,000 pour l'ATS classique (TF-IDF)</span></div>
           <div><b>1,000</b><span>Disparate Impact après correction des biais avec AIF360</span></div>
           <div><b>55 CV</b><span>synthétiques testés face à 2 offres d'emploi réelles</span></div>
+        </div>
+        <h4 class="mgrp">Scores de pertinence attribués à un profil</h4>
+        <div class="metrics">
           <div><b>11,4 → 66,5</b><span>score sur 100 d'un profil Data Scientist face à une offre full stack : ATS classique contre Nexura IA</span></div>
         </div>
         <div class="proto"><h4>Protocole d'évaluation</h4><p>Jeu de test : 55 CV synthétiques face à 2 offres d'emploi réelles. Référence de comparaison : un ATS classique fondé sur TF-IDF. Mesures : F1-score sur l'offre Data Scientist, avec une vérité terrain établie manuellement ; Disparate Impact et Statistical Parity Difference avant et après correction par Reweighing (AIF360). Lecture prudente : l'échantillon est restreint, et un indicateur de parité ne suffit pas, à lui seul, à démontrer l'absence de biais.</p></div>
@@ -383,8 +388,9 @@ nav ul a.active{color:var(--accent);font-weight:600}
         <h4>Ma mission</h4>
         <ul>
           <li>Concevoir l'architecture d'un ERP capable de <strong>centraliser les données métiers</strong>, superviser les opérations en temps réel et produire des <strong>indicateurs fiables</strong> pour décider.</li>
-          <li>Prévoir une <strong>montée en charge nationale</strong> et intégrer des capacités d'<strong>intelligence artificielle</strong> (agent DispatchAI : répartition des missions et anticipation des retards).</li>
+          <li>Prévoir une <strong>montée en charge nationale</strong> et intégrer des capacités d'<strong>intelligence artificielle</strong> (envisagé : agent DispatchAI : répartition des missions et anticipation des retards).</li>
         </ul>
+        <div class="proto"><h4>Statut du projet</h4><p><b>Conçu :</b> l'architecture et le cadrage fonctionnel de l'ERP. <b>Envisagé :</b> les fonctionnalités de l'agent DispatchAI (répartition des missions, anticipation des retards) et la montée en charge nationale. Il s'agit d'un projet de conception : le système complet n'a pas été déployé.</p></div>
         <h4>Architecture proposée</h4>
         <ul>
           <li><strong>Microservices orientés événements</strong> (Event-Driven Architecture), avec communication asynchrone par messages.</li>
@@ -426,7 +432,7 @@ nav ul a.active{color:var(--accent);font-weight:600}
           <li><strong>Edge computing</strong> : logique embarquée pour piloter les actionneurs en temps réel, sans dépendre du cloud.</li>
           <li><strong>Sécurité et cloud</strong> : passerelle <strong>MQTT</strong> (Mosquitto) chiffrée en TLS, certificats SSL/TLS (OpenSSL) et authentification forte contre l'interception des données.</li>
           <li><strong>Visualisation</strong> : traitement des flux avec Node-RED et dashboard Grafana en temps réel.</li>
-          <li><strong>Gestion de projet</strong> : planification sur 16 semaines avec un diagramme de PERT et identification du chemin critique.</li>
+          <li><strong>Gestion de projet</strong> : planification d'un déploiement complet sur 16 semaines (diagramme de PERT, chemin critique), distincte de la phase de prototypage réalisée en février – mars 2026.</li>
         </ul>
         <div class="chips"><span class="chip">ESP32</span><span class="chip">LoRaWAN</span><span class="chip">MQTT / Mosquitto</span><span class="chip">TLS</span><span class="chip">Edge computing</span><span class="chip">Node-RED</span><span class="chip">Grafana</span><span class="chip">PERT</span></div>
       </article>
