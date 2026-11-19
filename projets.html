@@ -388,9 +388,9 @@ nav ul a.active{color:var(--accent);font-weight:600}
         <h4>Ma mission</h4>
         <ul>
           <li>Concevoir l'architecture d'un ERP capable de <strong>centraliser les données métiers</strong>, superviser les opérations en temps réel et produire des <strong>indicateurs fiables</strong> pour décider.</li>
-          <li>Prévoir une <strong>montée en charge nationale</strong> et intégrer des capacités d'<strong>intelligence artificielle</strong> (envisagé : agent DispatchAI : répartition des missions et anticipation des retards).</li>
+          <li>Prévoir une <strong>montée en charge nationale</strong> et intégrer des capacités d'<strong>intelligence artificielle</strong> (agent DispatchAI : aide à la répartition des missions et suivi des livraisons à risque).</li>
         </ul>
-        <div class="proto"><h4>Statut du projet</h4><p><b>Conçu :</b> l'architecture et le cadrage fonctionnel de l'ERP. <b>Envisagé :</b> les fonctionnalités de l'agent DispatchAI (répartition des missions, anticipation des retards) et la montée en charge nationale. Il s'agit d'un projet de conception : le système complet n'a pas été déployé.</p></div>
+        <div class="proto"><h4>Statut du projet</h4><p><b>Réalisé (prototype fonctionnel) :</b> authentification JWT, gestion (CRUD) des clients, chauffeurs, véhicules, livraisons et factures, tableau de bord connecté aux données du backend, agent IA Dispatch branché aux données métier (assistant déterministe, sans service externe) et scripts de tests automatiques. <b>Proposé (architecture cible) :</b> microservices orientés événements, API Gateway, base NoSQL complémentaire et montée en charge nationale.</p></div>
         <h4>Architecture proposée</h4>
         <ul>
           <li><strong>Microservices orientés événements</strong> (Event-Driven Architecture), avec communication asynchrone par messages.</li>
@@ -399,7 +399,7 @@ nav ul a.active{color:var(--accent);font-weight:600}
           <li>Déploiement conteneurisé avec <strong>Docker</strong>, compatible cloud.</li>
           <li>Interface en <strong>React 18</strong>, API en <strong>NestJS</strong>, données dans <strong>PostgreSQL</strong>.</li>
         </ul>
-        <div class="chips"><span class="chip">React 18</span><span class="chip">NestJS</span><span class="chip">PostgreSQL</span><span class="chip">NoSQL</span><span class="chip">Microservices</span><span class="chip">Event-driven</span><span class="chip">API Gateway</span><span class="chip">Docker</span><span class="chip">Agent IA</span></div>
+        <div class="chips"><span class="chip">React 18</span><span class="chip">NestJS</span><span class="chip">PostgreSQL</span><span class="chip">NoSQL</span><span class="chip">Microservices</span><span class="chip">Event-driven</span><span class="chip">API Gateway</span><span class="chip">Docker</span><span class="chip">Agent IA</span><span class="chip">Prisma</span><span class="chip">JWT</span><span class="chip">Vite</span><span class="chip">Tailwind CSS</span><span class="chip">Recharts</span><span class="chip">Tests automatisés</span></div>
       </article>
 
       <article data-cat="de bd" class="proj">
